@@ -49,7 +49,6 @@ LinearEquation::LinearEquation(double _a, double _b) :x(0)
 void LinearEquation::root()
 {
 	this->x = -(this->b) / this->a;
-	//return this->x;
 }
 
 void LinearEquation::Print()
@@ -134,6 +133,8 @@ double QuadraticEquation::GetDiscrim()
 {
 	return this->discrim;
 }
+
+
 
 
 BiquadraticEquation::BiquadraticEquation(double _a, double _b, double _c) :x1(0), x2(0), x3(0), x4(0)

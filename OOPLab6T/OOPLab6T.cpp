@@ -9,6 +9,7 @@ using namespace std;
 // Ваші файли загловки
 #include "Task1.h"
 #include "Task2.h"
+#include "Task3.h"
 
 void MainMenuTask1()
 {
@@ -114,6 +115,7 @@ void MainMenuTask2()
         }
     } while (select != 0);
 }
+void MainMenuTask3();
 
 void MainMenu()
 {
@@ -140,6 +142,7 @@ void MainMenu()
             break;
         case 3:
             system("cls");
+            //MainMenuTask3();
             break;
         default:
             system("cls");
