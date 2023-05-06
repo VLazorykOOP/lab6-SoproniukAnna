@@ -4,17 +4,69 @@
 //
 
 #include <iostream>
+using namespace std;
 
-// Ваші файли загловки 
-//
-#include "Lab6Example.h"
+// Ваші файли загловки
+#include "Task1.h"
+
+void MainMenuTask1()
+{
+    cout << " \t \t \t Task 1 " << endl;
+    cout << "\t \t \t No virtual" << endl;
+    cout << "Size for Base1 " << sizeof(Base1) << endl;
+    cout << "Size for Base2 " << sizeof(Base2) << endl;
+    cout << "Size for D11 " << sizeof(D11) << endl;
+    cout << "Size for D21 " << sizeof(D21) << endl;
+    cout << "Size for D22 " << sizeof(D22) << endl;
+    cout << "Size for D3 " << sizeof(D3) << endl;
+    cout << "Size for D4 " << sizeof(D4) << endl;
+
+    cout << "\t \t \t Virtual " << endl;
+
+    cout << "Size for Base1 " << sizeof(Base1) << endl;
+    cout << "Size for Base2 " << sizeof(Base2) << endl;
+    cout << "Size for D11V " << sizeof(D11V) << endl;
+    cout << "Size for D21V " << sizeof(D21V) << endl;
+    cout << "Size for D22v " << sizeof(D22V) << endl;
+    cout << "Size for D3V " << sizeof(D3V) << endl;
+    cout << "Size for D4V " << sizeof(D4V) << endl;
+    cout << endl;
+}
+
+
+void MainMenu()
+{
+    int select = 0;
+    do
+    {
+        cout << '\t' << '\t' << '\t' << "Main menu" << endl;
+        cout << "1. Task 1" << endl;
+        cout << "2. Task 2" << endl;
+        cout << "3. Task 3" << endl;
+        cout << "0. Exit" << endl;
+        cin >> select;
+        system("cls");
+
+        switch (select)
+        {
+        case 1:
+            system("cls");
+            MainMenuTask1();
+            break;
+        case 2:
+            system("cls");
+            break;
+        case 3:
+            system("cls");
+            break;
+        default:
+            system("cls");
+            break;
+        }
+    } while (select != 0);
+}
+
 int main()
 {
-    std::cout << " Lab #6  !\n";
-    //  Код виконання завдань
-    //  Головне меню завдань
-    //  Функції та класи можуть знаходитись в інших файлах проекту
-
-    Example();
-
+	MainMenu();
 }
