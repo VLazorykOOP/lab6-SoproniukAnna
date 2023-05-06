@@ -48,6 +48,7 @@ void MainMenuTask2()
 
         LinearEquation linear(5,8);
         QuadraticEquation quadratic(5,6,7);
+        BiquadraticEquation biquadratic(1, 2, 3);
         switch (select)
         {
             double a, b, c;
@@ -83,17 +84,29 @@ void MainMenuTask2()
             }
 
             quadratic.root();
-
-            if (quadratic.GetD() < 0)
-            {
-                cout << "No solution(D < 0)" << endl;
-                break;
-            }
-            else
             quadratic.Print();
             break;
         case 3:
             system("cls");
+            cout << "\t \t \t Biquadratic equation" << endl;
+            cout << "Input a: ";
+            cin >> a;
+            biquadratic.setA(a);
+            cout << "Input b: ";
+            cin >> b;
+            biquadratic.setB(b);
+            cout << "Input c: ";
+            cin >> c;
+            biquadratic.setC(c);
+
+            if (a == 0)
+            {
+                cout << "It`s not a biquadratic equation" << endl;
+                break;
+            }
+
+            biquadratic.root();
+            biquadratic.Print();
             break;
         default:
             system("cls");
