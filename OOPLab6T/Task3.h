@@ -5,7 +5,7 @@ using namespace std;
 class Transport
 {
 protected:
-	string model = "Avrora";
+	string model = "Mercedes";
 	int capacity = 40000; //вантажопідйомність
 	int year = 2020;
 public:
@@ -20,11 +20,8 @@ public:
 	void setYear(int);
 	int getYear();
 
-	//InputAll
-	friend istream& operator>>(istream& is, Transport);
-	//PrintAll
-	friend ostream& operator<<(ostream& os, const Transport);
-
+	virtual void Input() = 0;
+	virtual void Print() = 0;
 };
 
 class Ship :public Transport
@@ -41,6 +38,8 @@ public:
 	void setWidth(int);
 	int getWidth();
 
+	void Input() override;
+	void Print() override;
 };
 
 class PassangerTransport: public Transport
@@ -54,6 +53,9 @@ public:
 
 	void setNumberOfSeats(int);
 	int getNumberOfSeats();
+
+	void Input() override;
+	void Print() override;
 };
 
 class PassangerShip: public PassangerTransport, public Ship
@@ -67,5 +69,8 @@ public:
 
 	void setNumberOfPassengers(int);
 	int getNumberOfPassengers();
+
+	void Input() override;
+	void Print() override;
 };
 

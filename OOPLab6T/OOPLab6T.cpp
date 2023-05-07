@@ -115,7 +115,58 @@ void MainMenuTask2()
         }
     } while (select != 0);
 }
-void MainMenuTask3();
+void MainMenuTask3()
+{
+    int select = 0;
+    Ship ship;
+    PassangerTransport PasTrans;
+    PassangerShip PasShip;
+    do
+    {
+        cout << '\t' << '\t' << '\t' << "Select option" << endl;
+        cout << "1. Input ship" << endl;
+        cout << "2. Print ship" << endl;
+        cout << "3. Input passanger transport" << endl;
+        cout << "4. Print passanger transport" << endl;
+        cout << "5. Input passanger ship" << endl;
+        cout << "6. Print passanger ship" << endl;
+        cout << "0. Exit" << endl;
+        cin >> select;
+        system("cls");
+
+
+        switch (select)
+        {
+        case 1:
+            system("cls");
+            ship.Input();
+            break;
+        case 2:
+            system("cls");
+            ship.Print();
+            break;
+        case 3:
+            system("cls");
+            PasTrans.Input();
+            break;
+        case 4:
+            system("cls");
+            PasTrans.Print();
+            break;
+        case 5:
+            system("cls");
+            PasShip.Input();
+            break;
+        case 6:
+            system("cls");
+            PasShip.Print();
+            break;
+        default:
+            system("cls");
+            break;
+        }
+    } while (select != 0);
+}
 
 void MainMenu()
 {
@@ -142,7 +193,7 @@ void MainMenu()
             break;
         case 3:
             system("cls");
-            //MainMenuTask3();
+            MainMenuTask3();
             break;
         default:
             system("cls");

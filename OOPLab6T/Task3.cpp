@@ -36,21 +36,6 @@ int Transport::getYear()
 	return this->year;
 }
 
-istream& operator>>(istream& is, Transport tran)
-{
-	is >> tran.model;
-	is >> tran.capacity;
-	is >> tran.year;
-	return is;
-}
-
-ostream& operator<<(ostream& os, const Transport tran)
-{
-	os << tran.model;
-	os << tran.capacity;
-	os << tran.year;
-	return os;
-}
 
 
 
@@ -82,6 +67,29 @@ int Ship::getWidth()
 	return this->width;
 }
 
+void Ship::Input()
+{
+	cout << "Input model: ";
+	cin >> this->model;
+	cout << "Input capacity: ";
+	cin >> this->capacity;
+	cout << "Input year: ";
+	cin >> this->year;
+	cout << "Input length: ";
+	cin >> this->length;
+	cout << "Input width: ";
+	cin >> this->width;
+}
+
+void Ship::Print()
+{
+	cout << "Model: " << this->model << endl;
+	cout << "Capacity: " << this->capacity << endl;
+	cout << "Year: " << this->year << endl;
+	cout << "Length: " << this->length << endl;
+	cout << "Width: " << this->width << endl;
+}
+
 
 
 
@@ -102,6 +110,26 @@ int PassangerTransport::getNumberOfSeats()
 	return this->numberOfSeats;
 }
 
+void PassangerTransport::Input()
+{
+	cout << "Input model: ";
+	cin >> this->model;
+	cout << "Input capacity: ";
+	cin >> this->capacity;
+	cout << "Input year: ";
+	cin >> this->year;
+	cout << "Input number of seats: ";
+	cin >> this->numberOfSeats;
+}
+
+void PassangerTransport::Print()
+{
+	cout << "Model: " << this->model << endl;
+	cout << "Capacity: " << this->capacity << endl;
+	cout << "Year: " << this->year << endl;
+	cout << "Number of seats: " << this->numberOfSeats << endl;
+}
+
 
 
 
@@ -120,5 +148,21 @@ void PassangerShip::setNumberOfPassengers(int val)
 int PassangerShip::getNumberOfPassengers()
 {
 	return this->numberOfPassengers;
+}
+
+void PassangerShip::Input()
+{
+	Ship::Input();
+	cout << "Input number of passangers: ";
+	cin >> this->numberOfPassengers;
+}
+
+
+void PassangerShip::Print()
+{
+	Ship::Print();
+	cout << "Number of seats:" << this->numberOfSeats << endl;
+	cout << "Number of passangers:" << this->numberOfPassengers << endl;
+	cout << endl;
 }
 
